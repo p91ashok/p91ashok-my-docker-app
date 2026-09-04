@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Demo Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="background"></div>
+
+<header class="navbar">
+    <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div>
+            <h1>DevOps<span>Lab</span></h1>
+            <p>Cloud & CI/CD Platform</p>
+        </div>
+    </div>
+    <div class="nav-status"><span class="status-dot"></span> System Operational</div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🚀 DEVOPS DEMONSTRATION</div>
+            <h2>Welcome to your <span>DevOps Dashboard</span></h2>
+            <p>A containerized Flask application deployed through GitHub, Jenkins, Docker and AWS.</p>
+            <div class="hero-buttons">
+                <a href="/health" class="primary-button">Check Health</a>
+                <a href="/api/info" class="secondary-button">API Information</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="server-card">
+                <div class="server-header"><span class="server-dot"></span> Application Server</div>
+                <div class="server-icon">☁</div>
+                <div class="server-status"><span></span> RUNNING</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <div><p class="section-label">APPLICATION</p><h3>System Status</h3></div>
+            <div class="live-indicator"><span></span> LIVE</div>
+        </div>
+
+        <div class="cards">
+            <div class="card"><div class="card-icon green">✓</div><div class="card-content"><p>Status</p><h4>Healthy</h4><span>Application responding normally</span></div></div>
+            <div class="card"><div class="card-icon blue">☁</div><div class="card-content"><p>Environment</p><h4>{{ environment }}</h4><span>Runtime environment</span></div></div>
+            <div class="card"><div class="card-icon purple">◉</div><div class="card-content"><p>Hostname</p><h4>{{ hostname }}</h4><span>Current application node</span></div></div>
+            <div class="card"><div class="card-icon orange">Py</div><div class="card-content"><p>Python</p><h4>{{ python_version }}</h4><span>Runtime version</span></div></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading"><div><p class="section-label">PLATFORM</p><h3>Technology Stack</h3></div></div>
+        <div class="technology-grid">
+            <div class="technology"><div class="technology-icon">🐍</div><div><strong>Python</strong><span>Application Runtime</span></div></div>
+            <div class="technology"><div class="technology-icon">🌶️</div><div><strong>Flask</strong><span>Web Framework</span></div></div>
+            <div class="technology"><div class="technology-icon">🐳</div><div><strong>Docker</strong><span>Container Platform</span></div></div>
+            <div class="technology"><div class="technology-icon">⚙</div><div><strong>Jenkins</strong><span>CI/CD Automation</span></div></div>
+            <div class="technology"><div class="technology-icon">◉</div><div><strong>GitHub</strong><span>Source Control</span></div></div>
+            <div class="technology"><div class="technology-icon">☁️</div><div><strong>AWS</strong><span>Cloud Infrastructure</span></div></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading"><div><p class="section-label">AUTOMATION</p><h3>Deployment Pipeline</h3></div></div>
+        <div class="pipeline">
+            <div class="pipeline-step active"><div class="pipeline-number">01</div><div class="pipeline-icon">◉</div><strong>GitHub</strong><span>Source Code</span></div>
+            <div class="pipeline-line"></div>
+            <div class="pipeline-step active"><div class="pipeline-number">02</div><div class="pipeline-icon">⚙</div><strong>Jenkins</strong><span>CI/CD</span></div>
+            <div class="pipeline-line"></div>
+            <div class="pipeline-step active"><div class="pipeline-number">03</div><div class="pipeline-icon">🐳</div><strong>Docker</strong><span>Build Image</span></div>
+            <div class="pipeline-line"></div>
+            <div class="pipeline-step active"><div class="pipeline-number">04</div><div class="pipeline-icon">☁</div><strong>AWS</strong><span>Deployment</span></div>
+        </div>
+    </section>
+
+    <section class="runtime">
+        <div>
+            <p class="section-label">RUNTIME INFORMATION</p>
+            <h3>Application Runtime</h3>
+            <p>This application is running inside a containerized environment managed through the Jenkins CI/CD pipeline.</p>
+        </div>
+        <div class="runtime-info">
+            <div><span>HOSTNAME</span><strong>{{ hostname }}</strong></div>
+            <div><span>PLATFORM</span><strong>{{ platform }}</strong></div>
+            <div><span>TIME</span><strong>{{ timestamp }}</strong></div>
+        </div>
+    </section>
+</main>
+
+<footer>DevOpsLab • GitHub → Jenkins → Docker → AWS</footer>
+</body>
+</html>
